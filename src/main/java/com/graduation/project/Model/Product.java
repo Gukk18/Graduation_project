@@ -14,7 +14,6 @@ import java.util.Set;
 @Entity
 @Table(name = "product")
 public class Product {
-    //Id
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
@@ -25,8 +24,21 @@ public class Product {
     @JdbcTypeCode(SqlTypes.NVARCHAR)
     private String name;
 
+    @Column(name = "images", nullable = false, unique = true)
+    @JdbcTypeCode(SqlTypes.VARCHAR)
+    private String images;
 
-//Name
+    @Column(name = "price", nullable = false, unique = true)
+    @JdbcTypeCode(SqlTypes.FLOAT)
+    private String price;
+
+    @Column(name = "quality", nullable = false, unique = true)
+    @JdbcTypeCode(SqlTypes.FLOAT)
+    private String quality;
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "product_id")
+    private Set<Order_detail> order_details = new LinkedHashSet<>();
 
 
 
