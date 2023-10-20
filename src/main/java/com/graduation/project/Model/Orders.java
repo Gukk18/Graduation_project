@@ -12,29 +12,28 @@ import java.util.Set;
 @Getter
 @Setter
 @Entity
-@Table(name = "category")
-public class Category {
+@Table(name = "orders")
+public class Orders {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     @JdbcTypeCode(SqlTypes.INTEGER)
     private Integer id;
 
-    @Column(name = "name_category", nullable = false, unique = true)
+    @Column(name = "username", nullable = false, unique = true)
     @JdbcTypeCode(SqlTypes.NVARCHAR)
-    private String name_category;
+    private String username;
 
-    @Column(name = "description", nullable = false, unique = true)
+    @Column(name = "address", nullable = false, unique = true)
     @JdbcTypeCode(SqlTypes.NVARCHAR)
-    private String description;
+    private String address;
+
+    @Column(name = "date", nullable = false, unique = true)
+    @JdbcTypeCode(SqlTypes.DATE)
+    private String date;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "category_id")
-    private Set<Product> products = new LinkedHashSet<>();
-
-//relationship
-
-
-
+    @JoinColumn(name = "order_id")
+    private Set<Order_detail> order_details = new LinkedHashSet<>();
 
 }
