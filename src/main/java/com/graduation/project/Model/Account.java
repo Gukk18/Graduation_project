@@ -48,5 +48,10 @@ public class Account {
     @JoinColumn(name = "account_username")
     private Set<Authorities> authorities = new LinkedHashSet<>();
 
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "account_comment")
+    private Set<Comment> comments = new LinkedHashSet<>();
+
+
 
 }
