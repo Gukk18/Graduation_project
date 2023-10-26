@@ -1,0 +1,23 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" th:fragment="dynamic(main)">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<header class="row">
+
+    <div class="col-sm-12">
+        <nav th:replace="~{/user/layout/_menu.html}"></nav>
+    </div>
+</header>
+<div class="row">
+    <article>
+        <div th:replace="${main}"></div>
+    </article>
+</div>
+</body>
+</html>
