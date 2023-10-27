@@ -11,4 +11,9 @@ public class SecurityController {
 
         return "user/security/login";
     }
+    @RequestMapping("/signin")
+    public String signin(){
+
+        return "user/security/signin";
+    }
 }
