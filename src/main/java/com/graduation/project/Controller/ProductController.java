@@ -15,5 +15,4 @@ public class ProductController {
     public String detail(){
         return "user/product/detail";
     }
-
 }
