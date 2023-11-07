@@ -4,16 +4,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/admin")
+@RequestMapping("/user/product")
 public class ProductController {
 
-@RequestMapping("/index")
+@RequestMapping("/list")
     public String list(){
-    return "admin/index";
+    return "user/product/list";
 }
     @RequestMapping("/detail/{id}")
     public String detail(){
-        return "admin/detail";
+        return "user/product/detail";
     }
-
 }
