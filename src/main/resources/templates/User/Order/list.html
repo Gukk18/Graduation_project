@@ -4,7 +4,577 @@
 
 <body>
 <main>
-    <h1>Order list</h1>
+
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+
+        <title>shopping cart with selected products order summary and checkout button - Bootdey.com</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <style type="text/css">
+            body {
+                margin-top: 20px;
+                width: 100%;
+                background-color: #f1f3f7;
+            }
+
+            .avatar-lg {
+                height: 5rem;
+                width: 5rem;
+            }
+
+            .font-size-18 {
+                font-size: 18px !important;
+            }
+
+            .text-truncate {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+
+            a {
+                text-decoration: none !important;
+            }
+
+            .w-xl {
+                min-width: 160px;
+            }
+
+            .card {
+                margin-bottom: 24px;
+                -webkit-box-shadow: 0 2px 3px #e4e8f0;
+                box-shadow: 0 2px 3px #e4e8f0;
+            }
+
+            .card {
+                position: relative;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                flex-direction: column;
+                min-width: 0;
+                word-wrap: break-word;
+                background-color: #fff;
+                background-clip: border-box;
+                border: 1px solid #eff0f2;
+                border-radius: 1rem;
+            }
+            .mdi mdi-cart-outline me-1{margin-top: 100px;}
+            .btn btn-success {margin-top: 150px;
+
+            }
+        </style>
+    </head>
+
+    <body>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.css"
+          integrity="sha256-NAxhqDvtY0l4xn+YVa6WjAcmd94NNfttjNsDmNatFVc=" crossorigin="anonymous" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-8">
+                <div class="card border shadow-none">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start border-bottom pb-3">
+                            <div class="me-4">
+                                <img src="https://zpro.vn/images/product/500x500/ban-phim-co-rk918-white-kem-ke-tay.1666326022.jpg" alt
+                                     class="avatar-lg rounded">
+                            </div>
+                            <div class="flex-grow-1 align-self-center overflow-hidden">
+                                <div>
+                                    <h5 class="text-truncate font-size-18"><a href="#" class="text-dark">Bàn phím cơ Royal Kludge RK-H81 Time Machine (3 Modes, Hotswap)</a></h5>
+
+                                    <p class="mb-0 mt-1">Bàn phím : <span class="fw-medium">Cơ (Led)</span></p>
+                                </div>
+                            </div>
+                            <div class="flex-shrink-0 ms-2">
+                                <ul class="list-inline mb-0 font-size-16">
+                                    <li class="list-inline-item">
+                                        <a href="#" class="text-muted px-1">
+                                            <i class="mdi mdi-trash-can-outline"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#" class="text-muted px-1">
+                                            <i class="mdi mdi-heart-outline"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="mt-3">
+                                        <p class="text-muted mb-2">Tổng</p>
+                                        <h5 class="mb-0 mt-2"><span class="text-muted me-2"><del
+                                                class="font-size-16 fw-normal">$500</del></span>$450</h5>
+                                    </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="mt-3">
+                                        <p class="text-muted mb-2">Số lượng</p>
+                                        <div class="d-inline-flex">
+                                            <select class="form-select form-select-sm w-xl">
+                                                <option value="1">1</option>
+                                                <option value="2" selected>2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="mt-3">
+                                        <p class="text-muted mb-2">Tổng</p>
+                                        <h5>$900</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card border shadow-none">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start border-bottom pb-3">
+                            <div class="me-4">
+                                <img src="https://zpro.vn/images/product/500x500/ban-phim-co-royal-kludge-rk-h81-wild-west-version.1684943929.jpg" alt
+                                     class="avatar-lg rounded">
+                            </div>
+                            <div class="flex-grow-1 align-self-center overflow-hidden">
+                                <div>
+                                    <h5 class="text-truncate font-size-18"><a href="#" class="text-dark">Bàn phím cơ Royal Kludge RK R87 - BLACK (Hotswap, Keycap PBT) </a></h5>
+
+                                    <p class="mb-0 mt-1">Bàn phím : <span class="fw-medium">Cơ (Led)</span></p>
+                                </div>
+                            </div>
+                            <div class="flex-shrink-0 ms-2">
+                                <ul class="list-inline mb-0 font-size-16">
+                                    <li class="list-inline-item">
+                                        <a href="#" class="text-muted px-1">
+                                            <i class="mdi mdi-trash-can-outline"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#" class="text-muted px-1">
+                                            <i class="mdi mdi-heart-outline"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="mt-3">
+                                        <p class="text-muted mb-2">Tổng</p>
+                                        <h5 class="mb-0 mt-2"><span class="text-muted me-2"><del
+                                                class="font-size-16 fw-normal">$280</del></span>$240</h5>
+                                    </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="mt-3">
+                                        <p class="text-muted mb-2">Số lượng</p>
+                                        <div class="d-inline-flex">
+                                            <select class="form-select form-select-sm w-xl">
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3" selected>3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                                <option value="9">8</option>
+                                                <option value="10">8</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="mt-3">
+                                        <p class="text-muted mb-2">Tổng</p>
+                                        <h5>$720</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card border shadow-none">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start border-bottom pb-3">
+                            <div class="me-4">
+                                <img src="https://zpro.vn/images/product/500x500/ban-phim-co-royal-kludge-rk-r87-black-hotswap-keycap-pbt.1682335778.jpg" alt
+                                     class="avatar-lg rounded">
+                            </div>
+                            <div class="flex-grow-1 align-self-center overflow-hidden">
+                                <div>
+                                    <h5 class="text-truncate font-size-18"><a href="#" class="text-dark">Bàn phím cơ RK918 White - Kèm kê tay</a></h5>
+
+                                    <p class="mb-0 mt-1">Color : <span class="fw-medium">Blue</span></p>
+                                </div>
+                            </div>
+                            <div class="flex-shrink-0 ms-2">
+                                <ul class="list-inline mb-0 font-size-16">
+                                    <li class="list-inline-item">
+                                        <a href="#" class="text-muted px-1">
+                                            <i class="mdi mdi-trash-can-outline"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#" class="text-muted px-1">
+                                            <i class="mdi mdi-heart-outline"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="mt-3">
+                                        <p class="text-muted mb-2">Price</p>
+                                        <h5 class="mb-0 mt-2"><span class="text-muted me-2"><del
+                                                class="font-size-16 fw-normal">$750</del></span>$950</h5>
+                                    </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="mt-3">
+                                        <p class="text-muted mb-2">Số lượng</p>
+                                        <div class="d-inline-flex">
+                                            <select class="form-select form-select-sm w-xl">
+                                                <option value="1" selected>1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="mt-3">
+                                        <p class="text-muted mb-2">Tổng</p>
+                                        <h5>$950</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row my-4">
+                    <div class="col-sm-6">
+                        <a href="ecommerce-products.html" class="btn btn-link text-muted">
+                            <i class="mdi mdi-arrow-left me-1"></i>Quay lại trang mua hàng </a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-xl-4">
+                <div class="mt-5 mt-lg-0">
+                    <div class="card border shadow-none">
+                        <div class="feed-item-list">
+                            <div>
+                                <h5 class="font-size-16 mb-0" style="margin-left: 20px;">Thông tin thanh toán</h5>
+                                <br>
+                                <div  style="margin-left: 25px;" class="mb-3">
+                                    <form>
+                                        <div>
+
+                                            <div class="mb-3">
+                                                <label class="form-label" for="billing-address">Địa chỉ</label>
+                                                <textarea class="form-control" id="billing-address" rows="3"
+                                                          placeholder="Địa chỉ chi tiết"></textarea>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-4">
+                                                    <div class="mb-4 mb-lg-0">
+                                                        <label class="form-label">Quốc gia</label>
+                                                        <select class="form-control form-select"
+                                                                title="Country">
+                                                            <option value="0">English</option>
+                                                            <option value="AF">VietNam</option>
+                                                            <option value="AL">ThaiLand</option>
+                                                            <option value="DZ">Algeria</option>
+                                                            <option value="AS">China</option>
+                                                            <option value="AD">Andorra</option>
+                                                            <option value="AO">Angola</option>
+                                                            <option value="AI">Anguilla</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <div class="mb-4 mb-lg-0">
+                                                        <label class="form-label"
+                                                               for="billing-city">Thành phố</label>
+                                                        <input type="text" class="form-control"
+                                                               id="billing-city" placeholder="">
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pttt">
+                            <h5 style="margin-left: 20px;" class="font-size-16 mb-0">Phương thức thanh toán</h5>
+                            <br>
+                            <button style="margin-left: 25px;" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Thay đổi</button>
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Phương thức thanh toán</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form>
+                                                <div class="mb-3">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                                        <label class="form-check-label" for="defaultCheck1">
+                                                            Thanh toán khi nhận hàng
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                                        <label class="form-check-label" for="defaultCheck1">
+                                                            Thẻ tín dụng ghi nợ
+                                                        </label>
+                                                    </div>
+                                                </div>
+
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                                            <a href=""><button type="button" class="btn btn-primary">Hoàn tất chọn phương thức</button></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-header bg-transparent border-bottom py-3 px-4">
+                            <h5 class="font-size-16 mb-0">Chi tiết sản phẩm trong giỏ hàng</h5>
+                        </div>
+                        <div class="card-body p-4 pt-2">
+                            <div class="table-responsive">
+                                <table class="table mb-0">
+                                    <tbody>
+                                    <tr>
+                                        <td>Sub Total :</td>
+                                        <td class="text-end">$ 780</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Phí vận chuyển :</td>
+                                        <td class="text-end">$ 25</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Estimated Tax : </td>
+                                        <td class="text-end">$ 18.20</td>
+                                    </tr>
+                                    <tr class="bg-light">
+                                        <th>Thành tiền :</th>
+                                        <td class="text-end">
+                                                <span class="fw-bold">
+                                                    $ 745.2
+                                                </span>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <div class="col-sm-6">
+                                    <div  class="text-sm-end mt-2 mt-sm-0">
+                                        <a href="ecommerce-checkout.html" style="margin-top: 20px;margin-right: 40px;" class="btn btn-success">
+                                            <i class="mdi mdi-cart-outline me-1"></i> Thanh toán </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!DOCTYPE html>
+        <html lang="en">
+
+        <head>
+            <meta charset="utf-8">
+
+
+            <title>bs5 dark footer - Bootdey.com</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+            <link rel="stylesheet" href="style.css">
+        </head>
+
+        <body>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
+              integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
+        <footer class="bg-dark-gradient footer">
+            <div class="footer-top">
+                <div class="container">
+                    <div class="footer-border-bottom pb-6 mb-5">
+                        <div class="row">
+                            <div class="col-lg-4 col-xl-3">
+                                <h4 class="text-white">
+                                    KeyZone Shop
+                                </h4>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-lg-3 my-4">
+                            <div class="mb-4">
+                                <img src="static/img/logo-light.svg" title alt>
+                            </div>
+                            <div style="color: aliceblue;" class="text-white-65 mb-4">Follow the shop's fanpage at
+                            </div>
+                            <div class="nav footer-socila-icon">
+                                <a href="#">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-2 my-4">
+                            <h5 class="text-white h6 mb-4">Customer</h5>
+                            <ul class="list-unstyled white-link footer-links">
+                                <li>
+                                    <a href="#">Get Corpo</a>
+                                </li>
+                                <li>
+                                    <a href="#">Documentation</a>
+                                </li>
+                                <li>
+                                    <a href="#">Help center</a>
+                                </li>
+                                <li>
+                                    <a href="#">Pricing</a>
+                                </li>
+                                <li>
+                                    <a href="#">Contact us</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-lg-2 my-4">
+                            <h5 class="text-white h6 mb-4">Product</h5>
+                            <ul class="list-unstyled white-link footer-links">
+                                <li>
+                                    <a href="#">Portfolio</a>
+                                </li>
+                                <li>
+                                    <a href="#">Blog</a>
+                                </li>
+                                <li>
+                                    <a href="#">Join our team</a>
+                                </li>
+                                <li>
+                                    <a href="#">Elements</a>
+                                </li>
+                                <li>
+                                    <a href="#">Products</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-lg-2 my-4">
+                            <h5 class="text-white h6 mb-4">Company</h5>
+                            <ul class="list-unstyled white-link footer-links">
+                                <li>
+                                    <a href="#">About</a>
+                                </li>
+                                <li>
+                                    <a href="#">Careers</a>
+                                </li>
+                                <li>
+                                    <a href="#">Legal &amp; Security</a>
+                                </li>
+                                <li>
+                                    <a href="#">Terms of use</a>
+                                </li>
+                                <li>
+                                    <a href="#">We're hiring!</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-lg-3 my-4">
+                            <h5 class="text-white h6 mb-4">Company</h5>
+                            <div class="white-link">
+                                <div class="d-flex pb-3">
+                                    <div class="avatar avatar-lg rounded">
+                                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" title alt>
+                                    </div>
+                                    <div class="col ps-3">
+                                        <small class="text-white-65">2023</small>
+                                        <h6 class="font-w-500 h6 m-0"><a class="text-white" href="#">Dự án Tốt nghiệp
+                                            KeyZone Shop</a></h6>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom footer-border-top light py-3">
+                <div class="container text-center">
+                    <p style="color: bisque;" class="m-0">FPT Polytechnic © 2023 <a href="#" class="text-reset">KeyZone</a></p>
+                </div>
+            </div>
+        </footer>
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script type="text/javascript">
+
+        </script>
+        </body>
+
+        </html>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript">
+
+    </script>
+    </body>
+
+    </html>
+
 </main>
 </body>
 </html>
