@@ -15,4 +15,9 @@ public class ProductController {
     public String detail(){
         return "user/product/detail";
     }
+    @RequestMapping("/comment")
+    public String comment(){
+        return "user/product/comment";
+    }
 }
+
