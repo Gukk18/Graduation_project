@@ -18,6 +18,7 @@ public class ProductController {
     public String list(Model model){
     List<Product> list = productService.fillAll();
     model.addAttribute("items",list);
+
     return "user/product/list";
 }
     @RequestMapping("/detail/{id}")

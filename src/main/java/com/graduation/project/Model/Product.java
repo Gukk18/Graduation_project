@@ -24,17 +24,17 @@ public class Product {
     @JdbcTypeCode(SqlTypes.NVARCHAR)
     private String name;
 
-    @Column(name = "images", nullable = false, unique = true)
-    @JdbcTypeCode(SqlTypes.VARCHAR)
+    @Column(name = "images")
+//    @JdbcTypeCode(SqlTypes.VARCHAR)
     private String images;
 
     @Column(name = "price", nullable = false, unique = true)
     @JdbcTypeCode(SqlTypes.FLOAT)
-    private String price;
+    private Float price;
 
     @Column(name = "quality", nullable = false, unique = true)
     @JdbcTypeCode(SqlTypes.FLOAT)
-    private String quality;
+    private Float quality;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "product_id")
