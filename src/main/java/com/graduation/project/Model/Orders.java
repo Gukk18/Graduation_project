@@ -32,8 +32,6 @@ public class Orders {
     @JdbcTypeCode(SqlTypes.DATE)
     private String date;
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "order_id")
-    private Set<Order_detail> order_details = new LinkedHashSet<>();
+
 
 }

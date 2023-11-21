@@ -6,8 +6,8 @@
         <div th:each="p:${items}" class="col-sm-4">
 
             <div class="card" style="width: 18rem;">
-                <a th:href="@{|/product/detail/${p.id}|}">
-                    <img th:src="@{|/assets/images/${p.images}|}" class="card-img-top" >
+                <a th:href="@{|/user/product/detail/${p.id}|}">
+                    <img th:src="@{|/assets/images/${p.image}|}" class="card-img-top" >
 
                 </a>
                 <div class="card-body">
@@ -21,6 +21,7 @@
     </main>
 </body>
 </html>
+
 
 
 
