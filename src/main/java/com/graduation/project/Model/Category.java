@@ -28,9 +28,10 @@ public class Category {
     @JdbcTypeCode(SqlTypes.NVARCHAR)
     private String description;
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "category_id")
-    private Set<Product> products = new LinkedHashSet<>();
+//    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+//    @JoinColumn(name = "category_id")
+//    private Set<Product> products = new LinkedHashSet<>();
+
 
 //relationship
 

@@ -40,6 +40,8 @@ public class Product {
     @JoinColumn(name = "product_id")
     private Set<Order_detail> order_details = new LinkedHashSet<>();
 
-
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "category_id")
+    private Category category;
 
 }
