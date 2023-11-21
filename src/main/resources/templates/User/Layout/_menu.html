@@ -1,6 +1,7 @@
+<div xmlns:th="http://www.thymeleaf.org">
 <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav" style="background:linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(255, 128, 0, 0.85) 100%);">
     <div class="container px-4 px-lg-5">
-        <a class="navbar-brand" href="#page-top">KeyZONE</a>
+        <a class="navbar-brand" th:href="@{/user/product/list}">KeyZONE</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -15,5 +16,5 @@
         </div>
     </div>
 </nav>
-
+</div>
 
