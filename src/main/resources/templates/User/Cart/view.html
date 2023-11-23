@@ -1,7 +1,6 @@
 <div xmlns:th="http://www.thymeleaf.org"
      th:replace="~{/user/layout/index :: dynamic (~{::main})}">
     <table class="table" style="margin-top: 100px">
-
         <tbody>
         <tr>
             <th scope="row">1</th>
@@ -15,12 +14,11 @@
         </tbody>
     </table>
 
-
     <main>
         <div th:fragment="cart_frag">
 
             <div ng-if="!cart.items.length" class="panel-body text-center" style="margin-top: 100px">
-                <h3 style="font-variant: small-caps;">No items in your shopping cart</h3>
+                <h3 style="font-size:x-large ;">No items in your shopping cart</h3>
             </div>
             <table ng-if="cart.items.length" class="table" style="margin-top: 100px">
                 <thead class="thead-light" style="background-color: black; color: white;">
@@ -34,8 +32,6 @@
                     <th scope="col">Delete</th>
                 </tr>
                 </thead>
-
-
 
                 <tbody>
                 <tr ng-repeat="item in cart.items">
@@ -52,25 +48,28 @@
                         <button style=" margin-left: 13px" ng-click="cart.remove(item.id)"
                                 class="btn btn-sm btn-danger">
 
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                 width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
                                 <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
                             </svg>
-
                         </button>
                     </td>
                 </tr>
                 </tbody>
-
-
             </table>
-            <div style="background-color: white;" ng-if="cart.items.length" class="panel-footer">
+
+            <div style="background-color: white;" ng-if="cart.items.length">
+                <div style="margin-right: 90%" th:replace="/user/layout/_cart-info.html"></div>
+
                 <button ng-click="cart.clear()" class="btn btn-danger">
                     <i class="glyphicon glyphicon-trash"></i> Clear
                 </button>
                 <a th:href="@{/order/checkout}" class="btn btn-primary"> <i
                         class="glyphicon glyphicon-hand-right"></i> Checkout
                 </a>
+
             </div>
+
         </div>
     </main>
 </div>

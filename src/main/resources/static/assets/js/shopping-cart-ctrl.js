@@ -1,4 +1,5 @@
 app.controller("cart-ctrl", function($scope, $http){
+
     // quản lý giỏ hàng
     var $cart = $scope.cart = {
         items: [],
@@ -14,14 +15,19 @@ app.controller("cart-ctrl", function($scope, $http){
                     this.items.push(resp.data);
                     this.saveToLocalStorage();
                     alert("Đã thêm vào giỏ hàng !")
+
+
+
                 })
             }
+
         },
 
         remove(id){ // xóa sản phẩm khỏi giỏ hàng
             var index = this.items.findIndex(item => item.id == id);
             this.items.splice(index, 1);
             this.saveToLocalStorage();
+            alert("Đã xóa sản phẩm khỏi giỏ hàng !")
 
         },
         clear(){ // Xóa sạch các mặt hàng trong giỏ
