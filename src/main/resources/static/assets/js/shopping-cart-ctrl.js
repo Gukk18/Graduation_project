@@ -13,6 +13,7 @@ app.controller("cart-ctrl", function($scope, $http){
                     resp.data.qty = 1;
                     this.items.push(resp.data);
                     this.saveToLocalStorage();
+                    alert("Đã thêm vào giỏ hàng !")
                 })
             }
         },
@@ -21,10 +22,12 @@ app.controller("cart-ctrl", function($scope, $http){
             var index = this.items.findIndex(item => item.id == id);
             this.items.splice(index, 1);
             this.saveToLocalStorage();
+
         },
         clear(){ // Xóa sạch các mặt hàng trong giỏ
             this.items = []
             this.saveToLocalStorage();
+            alert("Đã xóa sạch các mặt hàng trong giỏ!")
         },
         amt_of(item){ // tính thành tiền của 1 sản phẩm
             return item.price * item.qty;
