@@ -3,19 +3,19 @@
       th:replace="~{/user/layout/index :: dynamic(~{::main})}">
 <body>
     <main class="row" style="margin-top: 100px">
-        <div th:each="p:${items}" class="col-sm-4">
+        <div th:each="p:${items}" class="col-sm-4" style=" padding-top: 10px">
 
-            <div class="card" style="width: 18rem;">
+            <div class="card" style="width: 18rem;" >
                 <a th:href="@{|/user/product/detail/${p.id}|}">
                     <img th:src="@{|/assets/images/${p.image}|}" class="card-img-top" >
 
                 </a>
+                <b style="margin-top: 5px; margin-left: 15px;">[[${p.name}]]</b>
                 <div class="card-body">
                     <b class="pull-left" style="margin-top:5px">$[[${p.price}]]</b>
                     <p th:replace="~{/user/product/_actions::item_id(${p.id})}" />
                 </div>
             </div>
-
 
         </div>
     </main>
