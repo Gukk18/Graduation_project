@@ -5,8 +5,12 @@
 
         </div>
         <div class="list-group" >
-            <a href="/user/product/list?cid=1"> Mechanical keyboard</a>
-            <a href="/user/product/list?cid=2"> Regular keyboard</a>
+            <th:block th:each="c:${cates}">
+                <a th:href="@{|/user/product/list?cid=${c.id}|}"  class="list-group-item">
+                    <span th:text="${c.name}"></span>
+                </a>
+            </th:block>
+
         </div>
     </div>
 </div>

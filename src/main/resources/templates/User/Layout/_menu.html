@@ -1,26 +1,93 @@
 <div xmlns:th="http://www.thymeleaf.org">
 <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav" style="background:linear-gradient(to bottom, rgba(66, 81, 92, 0.8) 0%, rgba(82, 168, 244, 0.85) 50%);">
     <div class="container px-4 px-lg-5">
+
         <a class="navbar-brand" th:href="@{/user/product/list}">KeyZONE</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+
+
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ms-auto my-2 my-lg-0">
-                <li class="nav-item"><a class="nav-link" href="#about">Product</a></li>
-                <li class="nav-item"><a class="nav-link" href="#services">Types keyboards</a></li>
+                <li class="nav-item"><a class="nav-link" th:href="@{/user/product/list}">Product</a></li>
+                <li class="nav-item"><a class="nav-link"
+                                        data-bs-toggle="offcanvas"
+                                        data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
+                                        aria-label="Toggle navigation"
+                >
+                    Types keyboards</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Brand name</a></li>
-                <li class="nav-item"><a class="nav-link" href="#portfolio">Cart</a></li>
-                <li class="nav-item"><a class="nav-link" href="#contact">Acount</a></li>
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="modal" data-bs-target="#exampleModal">Acount</a></li>
             </ul>
         </div>
-        <a th:href="@{/user/cart/view}"><svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor" class="bi bi-cart-dash" viewBox="0 0 16 16">
+        <a style="text-decoration: none" th:href="@{/user/cart/view}">
+        <svg xmlns="http://www.w3.org/2000/svg"
+             width="25" height="25" style="color: rgba(80,102,125,0.82); margin-left:5px " fill="currentColor" class="bi bi-cart-dash" viewBox="0 0 16 16">
             <path d="M6.5 7a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1z"/>
             <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
         </svg>
-
+                <span class="badge text-bg-secondary">{{cart.count}}</span>
     </a>
     </div>
 </nav>
 </div>
 
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Category</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+
+                <th:block th:each="c:${cates}">
+                    <a th:href="@{|/user/product/list?cid=${c.id}|}"  class="list-group-item">
+                        <span th:text="${c.name}"></span>
+                    </a>
+                </th:block>
+
+
+                <form class="d-flex mt-3" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+
+        <!--Modal Login-->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Login</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary"
+                        data-bs-dismiss="modal" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal1">Sign in</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!--Modal Sigin-->
+        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel1">Sign in</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
