@@ -10,9 +10,14 @@
                     <img th:src="@{|/assets/images/${p.image}|}" class="card-img-top" >
 
                 </a>
-                <b style="margin-top: 5px; margin-left: 15px;">[[${p.name}]]</b>
+                <b style="margin-top: 5px; margin-left: 15px;color:rgba(40,54,74,0.82)">Code: [[${p.name}]]</b>
                 <div class="card-body">
-                    <b class="pull-left" style="margin-top:5px">$[[${p.price}]]</b>
+                    <b class="pull-left" style="margin-top:5px;color:rgba(40,54,74,0.82)">Price: $[[${p.price}]]</b>
+                    <br>
+                    <button type="button" class="btn btn-info"
+                            data-bs-target="#exampleModalToggle" data-bs-toggle="modal" style="color:rgba(40,54,74,0.82)">
+                        Quick purchase
+                    </button>
                     <p th:replace="~{/user/product/_actions::item_id(${p.id})}" />
                 </div>
             </div>
@@ -21,6 +26,54 @@
     </main>
 </body>
 </html>
+<div class="modal fade" id="exampleModalToggle"
+     aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Quick purchase </h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">First</th>
+                            <th scope="col">Last</th>
+                            <th scope="col">Handle</th>
+                            <th scope="col">Edit</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>
+                                <img src="..." class="rounded float-start" alt="...">
+                            </td>
+                            <td>@mdo</td>
+                            <td>
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                     width="16" height="16" fill="currentColor" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                    <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708"/>
+                                </svg>
+                            </td>
+                        </tr>
+                        </tbody>
+
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-success" data-bs-dismiss="modal" data-bs-toggle="modal">Purchase</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
 
 
 

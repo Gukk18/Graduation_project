@@ -1,24 +1,39 @@
 package com.graduation.project.Controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/user/security")
+
 public class SecurityController {
-    @RequestMapping("/login")
-    public String login(){
-
-        return "user/security/login";
+    @RequestMapping("/user/security/login/form")
+    public String loginForm(Model model){
+        model.addAttribute("message","Please login !");
+        return "security/login";
     }
-    @RequestMapping("/signin")
-    public String signin(){
-
-        return "user/security/signin";
+    @RequestMapping("/user/security/login/success")
+    public String loginSuccess(Model model){
+        model.addAttribute("message","Login Successfully !");
+        return "security/login";
     }
-    @RequestMapping("/profile")
-    public String profile(){
 
-        return "user/security/profile";
+    @RequestMapping("/security/login/error")
+    public String loginError(Model model) {
+        model.addAttribute("message", "Sai thông tin đăng nhập!");
+        return "security/login";
     }
+
+    @RequestMapping("/security/unauthoried")
+    public String unauthoried(Model model) {
+        model.addAttribute("message", "Không có quyền truy xuất!");
+        return "security/login";
+    }
+
+    @RequestMapping("/security/logoff/success")
+    public String logoffSuccess(Model model) {
+        model.addAttribute("message", "Bạn đã đăng xuất!");
+        return "security/login";
+    }
+
 }
