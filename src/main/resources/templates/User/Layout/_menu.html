@@ -12,6 +12,10 @@
                     Types keyboards</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Brand name</a></li>
                 <li class="nav-item"><a class="nav-link" data-bs-toggle="modal" data-bs-target="#exampleModal">Acount</a></li>
+                <li class="nav-item"><a class="nav-link" th:href="@{/user/security/login/form}">Sign In</a></li>
+
+                <li class="nav-item"><a class="nav-link" th:href="@{/user/security/logoff}">Sign Out</a></li>
+
             </ul>
         </div>
         <a style="text-decoration: none" th:href="@{/user/cart/view}">
@@ -30,21 +34,17 @@
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
-
                 <th:block th:each="c:${cates}">
                     <a th:href="@{|/user/product/list?cid=${c.id}|}"  class="list-group-item">
                         <span th:text="${c.name}"></span>
                     </a>
                 </th:block>
-
-
                 <form class="d-flex mt-3" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
             </div>
         </div>
-
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
