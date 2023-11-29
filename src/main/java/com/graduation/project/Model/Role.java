@@ -8,7 +8,7 @@ import org.hibernate.type.SqlTypes;
 
 import java.util.LinkedHashSet;
 import java.util.Set;
-
+@SuppressWarnings("serial")
 @Getter
 @Setter
 @Entity
@@ -25,8 +25,8 @@ public class Role {
 
 
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "role_id")
-    private Set<Authorities> authorities = new LinkedHashSet<>();
+//    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+//    @JoinColumn(name = "role_id")
+//    private Set<Authorities> authorities = new LinkedHashSet<>();
 
 }

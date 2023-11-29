@@ -8,7 +8,7 @@ import jakarta.persistence.*;
 
 import lombok.Data;
 
-
+@SuppressWarnings("serial")
 @Data
 @Entity
 @Table(name = "Accounts")

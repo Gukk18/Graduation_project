@@ -7,7 +7,7 @@ import java.io.Serializable;
 import jakarta.persistence.*;
 import lombok.Data;
 
-
+@SuppressWarnings("serial")
 @Data
 @Entity
 @Table(name = "Orderdetails")
