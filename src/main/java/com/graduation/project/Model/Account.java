@@ -27,7 +27,7 @@ public class Account implements Serializable {
 
     @JsonIgnore
     @OneToMany(mappedBy = "account", fetch = FetchType.EAGER)
-    List<Authorities> authorities;
+    List<Authority> authorities;
 }
 //
 //import jakarta.persistence.*;
